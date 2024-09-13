@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Soccer Chatbot
 
-## Getting Started
+A simple chatbot application that provides soccer-related responses using the Groq Cloud API. This application is customised to answer user questions about soccer, specifically tailored to fans of Liverpool Football Club.
 
-First, run the development server:
+<!-- TOC -->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Soccer Chatbot](#soccer-chatbot)
+  - [Fun Fact](#fun-fact)
+  - [Features](#features)
+  - [Tech Stack](#tech-stack)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Code Overview](#code-overview)
+  - [Customisation](#customisation)
+  - [Contributing](#contributing)
+  - [Contact](#contact)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Fun Fact
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The chatbot’s responses are based on my brother's persona, a diehard Liverpool supporter and soccer enthusiast. The model emulates our particular interactions where he keeps me updated on soccer news and answers my many (many!) questions.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features
 
-## Learn More
+- **Interactive Chat**: Users can ask questions about soccer and receive responses.
+- **Personalised Responses**: The chatbot simulates a conversation with a Liverpool FC fan who provides insightful, sarcastic summarised answers.
+- **Responsive Design**: The application is designed to be user-friendly and visually appealing.
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js
+- React
+- Groq Cloud API
+- Tailwind CSS for modern and responsive design
+- React hooks for state management
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Installation
 
-## Deploy on Vercel
+To get started with the Soccer Chatbot, follow these steps:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone the Repository**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```zsh
+   git clone https://github.com/jediahjireh/chatbot-soccer.git
+   cd chatbot-soccer
+   ```
+
+2. **Install Dependencies**
+
+   Ensure that you have [Node.js](https://nodejs.org/) installed. Then, run:
+
+   ```zsh
+   npm install
+   ```
+
+3. **Set Up Environment Variables**
+
+   Create a `.env.local` file in the root directory and add your Groq API key:
+
+   ```env
+   GROQ_API_KEY=your-groq-cloud-api-key
+   ```
+
+   If you don't have a Groq API key, get one [here](https://console.groq.com/keys).
+
+4. **Run the Application**
+
+   ```zsh
+   npm run dev
+   ```
+
+   The application will be available at `http://localhost:3000`.
+
+## Usage
+
+- **Ask Questions**: Type your soccer-related question into the input field and click "Ask Question" to get a response.
+- **Receive Responses**: The chatbot will respond with insightful and sarcastic answers about soccer, particularly Liverpool FC.
+
+## Code Overview
+
+- **[`/app/page.tsx`](/app/page.tsx)**: The main frontend component where the user interacts with the chatbot. It includes the input field, button and response display.
+- **[`/app/chat/route.ts`](/app/chat/route.ts)**: The backend route that handles API requests to the Groq Cloud service. It sends user queries and returns responses based on predefined chatbot behaviour.
+
+## Customisation
+
+- **Chatbot Behaviour**: Modify the `content` field in `getGroqChatCompletion` function within [`route.ts`](/app/chat/route.ts) to change how the chatbot responds.
+
+## Contributing
+
+If you wish to contribute to this project, fork the repository and submit a pull request. For any issues or feature requests, open an issue in the repository.
+
+## Contact
+
+For any questions or feedback, feel free to contact [me](mailto:jediahnaicker@gmail.com).
+
+---
+
+Happy chatting with the Soccer Chatbot!
